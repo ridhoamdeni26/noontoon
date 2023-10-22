@@ -26,7 +26,7 @@ export default function SubscriptionCard({
                         {features.map((feature, index) => (
                             <div
                                 className="flex items-center gap-2"
-                                key={`${index}-${id}-${features}`}
+                                key={`${index}-${features}-${id}`}
                             >
                                 <img src="/icons/ic_tick.svg" alt="" />
                                 <span className="text-sm">{feature}</span>

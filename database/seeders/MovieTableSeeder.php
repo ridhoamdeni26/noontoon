@@ -19,8 +19,8 @@ class MovieTableSeeder extends Seeder
                 'slug' => 'the-name-is-number-1',
                 'category' => 'Drama',
                 'video_url' => 'https://d33kv075lir7n3.cloudfront.net/Details+Screen+Part+Final.mp4',
-                'thumbnail' => 'hhttps://cdn-cms.pgimgs.com/static/2020/10/Film-Drama-Romantis-6.png',
-                'rating' => 9.3,
+                'thumbnail' => 'https://cdn-cms.pgimgs.com/static/2020/10/Film-Drama-Romantis-6.png',
+                'rating' => 4,
                 'is_featured' => true
             ],
             [
@@ -29,7 +29,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Action',
                 'video_url' => 'https://d33kv075lir7n3.cloudfront.net/Details+Screen+Part+Final.mp4',
                 'thumbnail' => 'https://akcdn.detik.net.id/community/media/visual/2016/02/26/5aaecf4c-ee37-41b0-bf6b-326648d3b07d_169.jpg?w=700&q=90',
-                'rating' => 9.3,
+                'rating' => 5,
                 'is_featured' => false
             ]
         ];

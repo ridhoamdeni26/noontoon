@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
@@ -16,7 +17,7 @@ class DashboardController extends Controller
 
         return Inertia::render('User/Dashboard/Index', [
             'movieFeature' => $movieFeature,
-            'movies' => $movies
+            'movies' => $movies,
         ]);
     }
 }

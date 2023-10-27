@@ -18,7 +18,7 @@ export default function SubscriptionCard({
                         <div className="text-[28px] font-bold">
                             {price.toLocaleString()}
                         </div>
-                        <p className="text-gray-1 text-xs font-light">
+                        <p className="text-[#767676] text-xs font-light">
                             /{durationInMonth} month
                         </p>
                     </div>

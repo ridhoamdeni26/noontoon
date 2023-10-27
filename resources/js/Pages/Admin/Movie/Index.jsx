@@ -1,11 +1,13 @@
 import Authenticated from "@/Layouts/Authenticated/Index";
 import PrimaryButton from "@/Components/PrimaryButton";
 import FlashMessage from "@/Components/FlashMessage";
-import { Link, Head } from "@inertiajs/react";
-import { usePage } from "@inertiajs/react";
+import { Link, Head, useForm } from "@inertiajs/react";
+import { usePage, router } from "@inertiajs/react";
 
 export default function Index({ auth }) {
     const { flashMessage, movies } = usePage().props;
+    const { delete: destroy, put } = useForm();
+
     return (
         <Authenticated user={auth.user}>
             <Head title="Admin - List Movie" />
@@ -50,27 +52,49 @@ export default function Index({ auth }) {
                                             <td>{movie.category}</td>
                                             <td>{movie.rating.toFixed(1)}</td>
                                             <td>
-                                                <Link
-                                                    href={route(
-                                                        "admin.dashboard.movie.edit",
-                                                        movie.id
-                                                    )}
+                                                {movie.deleted_at === null && (
+                                                    <Link
+                                                        href={route(
+                                                            "admin.dashboard.movie.edit",
+                                                            movie.id
+                                                        )}
+                                                    >
+                                                        <PrimaryButton
+                                                            type="button"
+                                                            variant="warning"
+                                                        >
+                                                            Edit
+                                                        </PrimaryButton>
+                                                    </Link>
+                                                )}
+                                            </td>
+                                            <td>
+                                                <div
+                                                    onClick={() => {
+                                                        movie.deleted_at
+                                                            ? put(
+                                                                  route(
+                                                                      "admin.dashboard.movie.restore",
+                                                                      movie.id
+                                                                  )
+                                                              )
+                                                            : destroy(
+                                                                  route(
+                                                                      "admin.dashboard.movie.destroy",
+                                                                      movie.id
+                                                                  )
+                                                              );
+                                                    }}
                                                 >
                                                     <PrimaryButton
                                                         type="button"
-                                                        variant="warning"
+                                                        variant="danger"
                                                     >
-                                                        Edit
+                                                        {movie.deleted_at
+                                                            ? "Restore"
+                                                            : "Delete"}
                                                     </PrimaryButton>
-                                                </Link>
-                                            </td>
-                                            <td>
-                                                <PrimaryButton
-                                                    type="button"
-                                                    variant="danger"
-                                                >
-                                                    Delete
-                                                </PrimaryButton>
+                                                </div>
                                             </td>
                                         </tr>
                                     ))}

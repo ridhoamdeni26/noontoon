@@ -60,7 +60,7 @@ export default function SubscriptionCard({
                         <div className="flex flex-col gap-4">
                             <div
                                 className="flex items-center gap-2"
-                                key={`${index}-${id}-${features}`}
+                                key={`${index}-${id}`}
                             >
                                 <svg
                                     width="24"

@@ -38,8 +38,8 @@ export default function Register() {
                 </div>
                 <div className="py-24 flex laptopLg:ml-[680px] laptopXl:ml-[870px]">
                     <div>
-                        <img src="/images/moonton-white.svg" alt="" />
-                        <div className="my-[70px]">
+                        <img src="/images/noonton-images.svg" alt="" />
+                        <div className="my-[70px] text-center md:text-left">
                             <div className="font-semibold text-[26px] mb-3">
                                 Sign Up
                             </div>
@@ -48,8 +48,8 @@ export default function Register() {
                                 the better insight for your life
                             </p>
                         </div>
-                        <form className="w-[370px]" onSubmit={submit}>
-                            <div className="flex flex-col gap-6">
+                        <form className="sm:w-[370px]" onSubmit={submit}>
+                            <div className="flex flex-col gap-6 items-center sm:items-stretch">
                                 <div>
                                     <InputLabel value="Full Name" />
                                     <TextInput
@@ -58,6 +58,7 @@ export default function Register() {
                                         value={data.name}
                                         placeholder="Your fullname..."
                                         isFocused={true}
+                                        className="text-white"
                                         onChange={(e) =>
                                             setData("name", e.target.value)
                                         }
@@ -76,6 +77,7 @@ export default function Register() {
                                         name="email"
                                         value={data.email}
                                         placeholder="Your Email Address"
+                                        className="text-white"
                                         onChange={(e) =>
                                             setData("email", e.target.value)
                                         }
@@ -94,6 +96,7 @@ export default function Register() {
                                         name="password"
                                         value={data.password}
                                         placeholder="Your Password"
+                                        className="text-white"
                                         onChange={(e) =>
                                             setData("password", e.target.value)
                                         }
@@ -113,6 +116,7 @@ export default function Register() {
                                         name="password_confirmation"
                                         value={data.password_confirmation}
                                         placeholder="Confirmation Password"
+                                        className="text-white"
                                         onChange={(e) =>
                                             setData(
                                                 "password_confirmation",
@@ -128,11 +132,12 @@ export default function Register() {
                                     />
                                 </div>
                             </div>
-                            <div className="grid space-y-[14px] mt-[30px]">
+                            <div className="flex flex-col items-center mt-[30px] space-y-[14px]">
                                 <PrimaryButton
                                     type="submit"
                                     variant="primary"
                                     disabled={processing}
+                                    className="w-[58%] md:w-full"
                                 >
                                     <span className="text-base font-semibold">
                                         Sign Up
@@ -143,7 +148,7 @@ export default function Register() {
                                         type="button"
                                         variant="light-outline"
                                     >
-                                        <span className="text-base text-white">
+                                        <span className="text-base mx-12 sm:mx-24 text-white">
                                             Sign In to My Account
                                         </span>
                                     </PrimaryButton>

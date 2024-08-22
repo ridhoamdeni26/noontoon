@@ -26,6 +26,7 @@ const UserMenu = [
 const UserOther = [
     {
         link: "user.dashboard.subscriptionPlan.index",
+        linkadmin: null,
         icon: (
             <svg
                 width="24"
@@ -45,6 +46,7 @@ const UserOther = [
     },
     {
         link: "logout",
+        linkadmin: "logout",
         icon: (
             <svg
                 width="24"

@@ -123,7 +123,10 @@ export default function Edit({ auth }) {
                     </div>
 
                     <div className="flex flex-row mt-4 items-center">
-                        <InputLabel value="IS Featured" className="mt-1 mr-2" />
+                        <InputLabel
+                            value="IS Featured"
+                            className="mt-1 mr-2 text-black ml-2"
+                        />
                         <Checkbox
                             name="is_featured"
                             onChange={(e) =>

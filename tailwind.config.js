@@ -8,6 +8,7 @@ export default {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.jsx",
+        "./node_modules/daisyui/dist/**/*.js",
     ],
 
     theme: {
@@ -26,7 +27,10 @@ export default {
                 laptopXl: "1360px",
             },
         },
+        daisyui: {
+            themes: ["light", "dark", "cupcake"],
+        },
     },
 
-    plugins: [forms],
+    plugins: [require("daisyui")],
 };

@@ -34,7 +34,7 @@ export default forwardRef(function TextInput(
             type={type}
             placeholder={placeholder}
             defaultValue={defaultValue}
-            className={`rounded-2xl bg-form-bg py-[13px] px-7 w-full ${
+            className={`input input-bordered rounded-2xl bg-form-bg py-[13px] px-7 w-full text-black ${
                 isError && "input-error"
             } input-${variant} ${className}`}
             ref={input}

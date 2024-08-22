@@ -1,5 +1,6 @@
 import Sidebar from "@/Layouts/Authenticated/Sidebar";
 import Topbar from "@/Layouts/Authenticated/Topbar";
+import MobileTopbar from "@/Layouts/Authenticated/MobileTopbar";
 import { usePage } from "@inertiajs/react";
 
 export default function Authenticated({ user, children }) {
@@ -20,9 +21,10 @@ export default function Authenticated({ user, children }) {
                 </div>
                 {/* End Content */}
             </div>
-            <div className="mx-auto px-4 w-full h-screen lg:hidden flex bg-black">
+            <div className="w-full h-screen flex flex-col lg:hidden bg-white text-white">
                 <div className="text-white text-2xl text-center leading-snug font-medium my-auto">
-                    Sorry, this page only supported on 1024px screen or above
+                    <MobileTopbar auth={auth} name={user.name} />
+                    <main>{children}</main>
                 </div>
             </div>
         </>

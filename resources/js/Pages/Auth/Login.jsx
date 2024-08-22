@@ -30,8 +30,8 @@ export default function Login() {
                 </div>
                 <div className="py-24 flex laptopLg:ml-[680px] laptopXl:ml-[870px]">
                     <div>
-                        <img src="/images/moonton-white.svg" alt="" />
-                        <div className="my-[70px]">
+                        <img src="/images/noonton-images.svg" alt="" />
+                        <div className="my-[70px] text-center md:text-left">
                             <div className="font-semibold text-[26px] mb-3">
                                 Welcome Back
                             </div>
@@ -40,8 +40,8 @@ export default function Login() {
                                 the better insight for your life
                             </p>
                         </div>
-                        <form className="w-[370px]" onSubmit={submit}>
-                            <div className="flex flex-col gap-6">
+                        <form className="sm:w-[370px]" onSubmit={submit}>
+                            <div className="flex flex-col gap-6 items-center sm:items-stretch">
                                 <div>
                                     <InputLabel value="Email Address" />
                                     <TextInput
@@ -78,11 +78,12 @@ export default function Login() {
                                     />
                                 </div>
                             </div>
-                            <div className="grid space-y-[14px] mt-[30px]">
+                            <div className="flex flex-col items-center mt-[30px] space-y-[14px]">
                                 <PrimaryButton
                                     type="submit"
                                     variant="primary"
                                     disabled={processing}
+                                    className="w-[58%] md:w-full"
                                 >
                                     <span className="text-base font-semibold">
                                         Start Watching
@@ -93,7 +94,7 @@ export default function Login() {
                                         type="button"
                                         variant="light-outline"
                                     >
-                                        <span className="text-base text-white">
+                                        <span className="text-base mx-12 sm:mx-24 text-white">
                                             Create New Account
                                         </span>
                                     </PrimaryButton>
